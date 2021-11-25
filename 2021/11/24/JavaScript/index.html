@@ -33,19 +33,19 @@
 <meta property="og:image" content="http://example.com/2021/11/24/JavaScript/03.png">
 <meta property="og:image" content="http://example.com/2021/11/24/JavaScript/04.png">
 <meta property="og:image" content="http://example.com/2021/11/24/JavaScript/05.png">
-<meta property="og:image" content="http://example.com/06.jpg">
+<meta property="og:image" content="http://example.com/2021/11/24/JavaScript/06.png">
 <meta property="og:image" content="http://example.com/2021/11/24/JavaScript/07.png">
 <meta property="og:image" content="http://example.com/2021/11/24/JavaScript/08.png">
 <meta property="og:image" content="http://example.com/2021/11/24/JavaScript/09.png">
 <meta property="og:image" content="http://example.com/2021/11/24/JavaScript/10.png">
-<meta property="og:image" content="http://example.com/11.png">
+<meta property="og:image" content="http://example.com/2021/11/24/JavaScript/11.jpg">
 <meta property="og:image" content="http://example.com/2021/11/24/JavaScript/12.jpg">
 <meta property="og:image" content="http://example.com/2021/11/24/JavaScript/13.png">
 <meta property="og:image" content="http://example.com/2021/11/24/JavaScript/14.png">
-<meta property="og:image" content="http://example.com/15.jpg">
-<meta property="og:image" content="http://example.com/16.png">
+<meta property="og:image" content="http://example.com/2021/11/24/JavaScript/15.png">
+<meta property="og:image" content="http://example.com/2021/11/24/JavaScript/16.jpg">
 <meta property="article:published_time" content="2021-11-24T09:56:35.756Z">
-<meta property="article:modified_time" content="2021-11-25T10:32:47.723Z">
+<meta property="article:modified_time" content="2021-11-25T11:34:33.216Z">
 <meta property="article:author" content="yuu">
 <meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
@@ -340,7 +340,7 @@
 <h3 id="6-构造函数的原型"><a href="#6-构造函数的原型" class="headerlink" title="6 构造函数的原型"></a>6 构造函数的原型</h3><h4 id="6-1-构造函数存在的问题"><a href="#6-1-构造函数存在的问题" class="headerlink" title="6.1 构造函数存在的问题"></a>6.1 构造函数存在的问题</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 构造函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Student</span>(<span class="params">name, age, sex</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">this</span>.name = name;</span><br><span class="line">  <span class="built_in">this</span>.age = age;</span><br><span class="line">  <span class="built_in">this</span>.sex = sex;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">this</span>.sayHi = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&#x27;Hi, my name is &#x27;</span> + <span class="built_in">this</span>.name);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建对象</span></span><br><span class="line"><span class="keyword">var</span> s1 = <span class="keyword">new</span> Student(<span class="string">&#x27;Tom&#x27;</span>, <span class="number">5</span>, <span class="string">&#x27;male&#x27;</span>);</span><br><span class="line"><span class="keyword">var</span> s2 = <span class="keyword">new</span> Student(<span class="string">&#x27;Jerry&#x27;</span>, <span class="number">3</span>, <span class="string">&#x27;male&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 调用sayHi</span></span><br><span class="line">s1.sayHi();</span><br><span class="line">s2.sayHi();</span><br></pre></td></tr></table></figure>
 
 <p>（内存中的s1和s2）</p>
-<p><img src="/06.jpg" alt="06"></p>
+<p><img src="/2021/11/24/JavaScript/06.png" alt="06"></p>
 <p>​        s1和s2存储了内容相同的function，不仅浪费空间还浪费时间。</p>
 <h4 id="6-2-解决对象中的方法存储多份的问题"><a href="#6-2-解决对象中的方法存储多份的问题" class="headerlink" title="6.2 解决对象中的方法存储多份的问题"></a>6.2 解决对象中的方法存储多份的问题</h4><h5 id="6-2-1-方法一"><a href="#6-2-1-方法一" class="headerlink" title="6.2.1 方法一"></a>6.2.1 方法一</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Student</span>(<span class="params">name, age, sex</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">this</span>.name = name;</span><br><span class="line">  <span class="built_in">this</span>.age = age;</span><br><span class="line">  <span class="built_in">this</span>.sex = sex;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">this</span>.sayHi = sayHi;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sayHi</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&#x27;Hi, my name is &#x27;</span> + <span class="built_in">this</span>.name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -366,7 +366,7 @@
 <h3 id="7-三角关系"><a href="#7-三角关系" class="headerlink" title="7 三角关系"></a>7 三角关系</h3><p>​        构造函数、原型对象、实例 / 对象之间的关系</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Student</span>(<span class="params">name, age, sex</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">this</span>.name = name;</span><br><span class="line">  <span class="built_in">this</span>.age = age;</span><br><span class="line">  <span class="built_in">this</span>.sex = sex;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> s1 = <span class="keyword">new</span> Student(<span class="string">&#x27;Tom&#x27;</span>, <span class="number">5</span>, <span class="string">&#x27;male&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.dir(s1);</span><br></pre></td></tr></table></figure>
 
-<p><img src="/11.png" alt="11"></p>
+<p><img src="/2021/11/24/JavaScript/11.jpg" alt="11"></p>
 <p><img src="/2021/11/24/JavaScript/12.jpg" alt="12"></p>
 <h3 id="8-原型链"><a href="#8-原型链" class="headerlink" title="8 原型链"></a>8 原型链</h3><h4 id="8-1-什么是原型链"><a href="#8-1-什么是原型链" class="headerlink" title="8.1 什么是原型链"></a>8.1 什么是原型链</h4><p>​        构造函数的原型对象的原型对象是Object原型对象</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 构造函数的原型对象</span></span><br><span class="line"><span class="keyword">var</span> o = s1.__proto__;</span><br><span class="line"><span class="built_in">console</span>.dir(o.__proto__);</span><br></pre></td></tr></table></figure>
@@ -376,7 +376,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// o.__proto__ Object的原型对象</span></span><br><span class="line"><span class="keyword">var</span> o1 = o.__proto__;</span><br><span class="line"><span class="built_in">console</span>.dir(o1.__proto__);</span><br></pre></td></tr></table></figure>
 
 <p><img src="/2021/11/24/JavaScript/14.png" alt="14"></p>
-<p><img src="/15.jpg" alt="15"></p>
+<p><img src="/2021/11/24/JavaScript/15.png" alt="15"></p>
 <h4 id="8-2-原型链的意义"><a href="#8-2-原型链的意义" class="headerlink" title="8.2 原型链的意义"></a>8.2 原型链的意义</h4><p>​        查找属性或方法时会沿着原型链查找。即先在对象中查找，如果查找不到，再在对象的原型对象中查找，依次类推，直到查找到null则为不存在，程序报错。</p>
 <p>​        而设置属性的值时不会搜索原型链，而是直接给对象新增该属性。</p>
 <h4 id="8-3-注意点"><a href="#8-3-注意点" class="headerlink" title="8.3 注意点"></a>8.3 注意点</h4><h5 id="8-3-1-对象的属性在构造函数中设置"><a href="#8-3-1-对象的属性在构造函数中设置" class="headerlink" title="8.3.1 对象的属性在构造函数中设置"></a>8.3.1 对象的属性在构造函数中设置</h5><h5 id="8-3-2-对象的方法在构造函数的原型对象中设置"><a href="#8-3-2-对象的方法在构造函数的原型对象中设置" class="headerlink" title="8.3.2 对象的方法在构造函数的原型对象中设置"></a>8.3.2 对象的方法在构造函数的原型对象中设置</h5><p>​        当设置多个方法时，建议通过修改prototype来设置</p>
@@ -389,7 +389,7 @@
 
 <h3 id="9-扩展内置对象"><a href="#9-扩展内置对象" class="headerlink" title="9 扩展内置对象"></a>9 扩展内置对象</h3><h4 id="9-1-如何扩展内置对象"><a href="#9-1-如何扩展内置对象" class="headerlink" title="9.1 如何扩展内置对象"></a>9.1 如何扩展内置对象</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.prototype.getEvenSum = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 求数组中所有偶数的和</span></span><br><span class="line">  <span class="keyword">var</span> sum = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="built_in">this</span>.length; i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">this</span>[i] % <span class="number">2</span> === <span class="number">0</span>) &#123;</span><br><span class="line">      sum += <span class="built_in">this</span>[i];</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> sum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(array.getEvenSum());</span><br></pre></td></tr></table></figure>
 
-<p><img src="/16.png" alt="16"></p>
+<p><img src="/2021/11/24/JavaScript/16.jpg" alt="16"></p>
 <h4 id="9-2-注意点"><a href="#9-2-注意点" class="headerlink" title="9.2 注意点"></a>9.2 注意点</h4><p>​        为了保护内置函数，其prototype对象无法被修改</p>
 
     </div>
