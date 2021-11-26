@@ -128,6 +128,11 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
+        <li class="menu-item menu-item-css-example">
+
+    <a href="/css_example/" rel="section"><i class="fa fa-columns fa-fw"></i>css案例</a>
+
+  </li>
   </ul>
 </nav>
 
@@ -176,8 +181,28 @@
       </div>
 
       <div class="post-title">
-          <a class="post-title-link" href="/2021/11/24/css%E8%BF%9B%E9%98%B6%E6%A1%88%E4%BE%8B/" itemprop="url">
-            <span itemprop="name">css进阶案例</span>
+          <a class="post-title-link" href="/2021/11/24/JavaScript/" itemprop="url">
+            <span itemprop="name">JavaScript高级</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2021-11-24T17:56:35+08:00"
+              content="2021-11-24">
+          11-24
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2021/11/24/cssExample/" itemprop="url">
+            <span itemprop="name">CSS进阶案例</span>
           </a>
       </div>
 
@@ -198,26 +223,6 @@
       <div class="post-title">
           <a class="post-title-link" href="/2021/11/24/myFirstBlog/" itemprop="url">
             <span itemprop="name">我的第一篇博客</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2021-11-24T17:56:35+08:00"
-              content="2021-11-24">
-          11-24
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/11/24/JavaScript/" itemprop="url">
-            <span itemprop="name">JavaScript高级</span>
           </a>
       </div>
 
@@ -311,7 +316,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -475,6 +480,10 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
       serverURLs : ''
     });
   }, window.Valine);
+  
+  //新增以下代码即可，可以移除.info下所有子节点。
+  document.querySelector('.vpower').style.display = "none";
+
 });
 </script>
 

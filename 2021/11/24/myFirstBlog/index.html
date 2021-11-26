@@ -132,6 +132,11 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
+        <li class="menu-item menu-item-css-example">
+
+    <a href="/css_example/" rel="section"><i class="fa fa-columns fa-fw"></i>css案例</a>
+
+  </li>
   </ul>
 </nav>
 
@@ -260,10 +265,6 @@
   <li class="post-copyright-author">
     <strong>本文作者： </strong>yuu
   </li>
-  <li class="post-copyright-link">
-    <strong>本文链接：</strong>
-    <a href="http://example.com/2021/11/24/myFirstBlog/" title="我的第一篇博客">http://example.com/2021/11/24/myFirstBlog/</a>
-  </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
   </li>
@@ -278,13 +279,10 @@
 
         
     <div class="post-nav">
+      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2021/11/24/JavaScript/" rel="prev" title="JavaScript高级">
-      <i class="fa fa-chevron-left"></i> JavaScript高级
-    </a></div>
-      <div class="post-nav-item">
-    <a href="/2021/11/24/css%E8%BF%9B%E9%98%B6%E6%A1%88%E4%BE%8B/" rel="next" title="css进阶案例">
-      css进阶案例 <i class="fa fa-chevron-right"></i>
+    <a href="/2021/11/24/cssExample/" rel="next" title="CSS进阶案例">
+      CSS进阶案例 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -373,7 +371,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -537,6 +535,10 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
       serverURLs : ''
     });
   }, window.Valine);
+  
+  //新增以下代码即可，可以移除.info下所有子节点。
+  document.querySelector('.vpower').style.display = "none";
+
 });
 </script>
 

@@ -128,6 +128,11 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
 
   </li>
+        <li class="menu-item menu-item-css-example">
+
+    <a href="/css_example/" rel="section"><i class="fa fa-columns fa-fw"></i>css案例</a>
+
+  </li>
   </ul>
 </nav>
 
@@ -272,7 +277,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">2</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -436,6 +441,10 @@ NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
       serverURLs : ''
     });
   }, window.Valine);
+  
+  //新增以下代码即可，可以移除.info下所有子节点。
+  document.querySelector('.vpower').style.display = "none";
+
 });
 </script>
 
